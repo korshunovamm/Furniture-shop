@@ -27,47 +27,49 @@ export function Main() {
 
   return (
     <>
-
       <aside className='main'>
         <header className='header'>
           <div id='sweet-home'> SweetHome</div>
-          <nav className='main-nav-links'>
-            {['main', 'catalog', 'service'].map((mainHeaderNavLink) => (
-              <div
-                id={`main-nav-${mainHeaderNavLink}`}
-                className={
-                  location.pathname === `/${mainHeaderNavLink}`
-                    ? 'main-nav-link-active'
-                    : 'main-nav-link'
-                }
-              >
-                <Link to={`/${mainHeaderNavLink}`} style={{ color: '#EBE9E9' }}>
-                  {mainHeaderNavLink.charAt(0).toUpperCase() +
-                    mainHeaderNavLink.slice(1)}
-                </Link>
-              </div>
-            ))}
-          </nav>
+            <nav className='main-nav-links'>
+              {['main', 'catalog', 'service'].map((mainHeaderNavLink) => (
+                <div
+                  id={`main-nav-${mainHeaderNavLink}`}
+                  className={
+                    location.pathname === `/${mainHeaderNavLink}`
+                      ? 'main-nav-link-active'
+                      : 'main-nav-link'
+                  }
+                >
+                  <Link
+                    to={`/${mainHeaderNavLink}`}
+                    style={{ color: '#EBE9E9' }}
+                  >
+                    {mainHeaderNavLink.charAt(0).toUpperCase() +
+                      mainHeaderNavLink.slice(1)}
+                  </Link>
+                </div>
+              ))}
+            </nav>
 
-          <nav className='main-nav-icons'>
-            {['search', 'cart', 'profile'].map((mainHeaderNavIcon) => (
-              <div
-                id={`main-header-nav-${mainHeaderNavIcon}`}
-                className={
-                  location.pathname === `/${mainHeaderNavIcon}`
-                    ? 'main-nav-icon-active'
-                    : 'main-nav-icon'
-                }
-              >
-                <Link to={mainHeaderNavIcon}>
-                  <img
-                    src={mainHeaderNavIcons[mainHeaderNavIcon]}
-                    alt={mainHeaderNavIcon}
-                  />
-                </Link>
-              </div>
-            ))}
-          </nav>
+            <nav className='main-nav-icons'>
+              {['search', 'cart', 'profile'].map((mainHeaderNavIcon) => (
+                <div
+                  id={`main-header-nav-${mainHeaderNavIcon}`}
+                  className={
+                    location.pathname === `/${mainHeaderNavIcon}`
+                      ? 'main-nav-icon-active'
+                      : 'main-nav-icon'
+                  }
+                >
+                  <Link to={mainHeaderNavIcon}>
+                    <img
+                      src={mainHeaderNavIcons[mainHeaderNavIcon]}
+                      alt={mainHeaderNavIcon}
+                    />
+                  </Link>
+                </div>
+              ))}
+            </nav>
         </header>
 
         <aside className='content'>
@@ -78,26 +80,25 @@ export function Main() {
             <picture className='circle'>
               <img id='front_img' src={FrontImg} alt='img' />
             </picture>
-
           </section>
 
           <section className='main-content'>
             <div className='main-content-text'>
-            <header id='main-content-text-header'>
-              Everything that surround us makes us stronger
-            </header>
-            <p id='main-content-text-text'>
-              Exclusive designer furniture and fittings. Natural materials and
-              individual approach when created, they will give an incomparably
-              high level of quality and comfort
-            </p>
-          </div>
+              <header id='main-content-text-header'>
+                Everything that surround us makes us stronger
+              </header>
+              <p id='main-content-text-text'>
+                Exclusive designer furniture and fittings. Natural materials and
+                individual approach when created, they will give an incomparably
+                high level of quality and comfort
+              </p>
+            </div>
 
             <button id='main-content-button'>
-            <Link to='/catalog'>
-              <img src={GoToCatalog} alt='Go to Catalog'></img>
-            </Link>
-          </button>
+              <Link to='/catalog'>
+                <img src={GoToCatalog} alt='Go to Catalog'></img>
+              </Link>
+            </button>
           </section>
         </aside>
       </aside>
