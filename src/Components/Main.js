@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import '../Components_css/Main.css';
 import SearchIcon from '../UI/Icons/MainPage/search.png';
 import CartIcon from '../UI/Icons/MainPage/cart.png';
@@ -15,8 +17,17 @@ export function Main() {
     profile: ProfileIcon,
   };
 
+  useEffect(() => {
+    document.body.style.backgroundColor = '#B3A3A1';
+
+    return () => {
+      document.body.style.backgroundColor = 'transparent';
+    };
+  }, []);
+
   return (
     <>
+
       <aside className='main'>
         <header className='header'>
           <div id='sweet-home'> SweetHome</div>

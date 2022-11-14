@@ -10,6 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Main />
+        
         {/* <Routes>
           <Route path='' element={<Main />}></Route>
           <Route path='/catalog' element={<Catalog />}></Route>
