@@ -1,0 +1,187 @@
+.catalog {
+  min-width: 970px;
+  justify-content: space-around;
+}
+
+.header-catalog {
+  margin-top: 52px ;
+  margin-bottom: 22px ;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main-ref-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 120px;
+  text-decoration: none;
+}
+
+.service-ref-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
+  text-decoration: none;
+}
+
+.main-ref-name {
+  font-family: 'Manrope';
+  font-style:oblique ;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 26px;
+  text-align: center;
+  
+  color: rgba(179, 163, 161, 0.75);
+}
+
+.main-ref-name:hover {
+  text-decoration: underline
+}
+
+#Catalog {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  
+  text-align: center;
+  
+  color: #B3A3A1;
+}
+
+.catalog-nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.catalog-nav-links-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+
+  text-decoration: none;
+}
+
+.catalog-nav-links-link{
+  text-decoration: none;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 20px;
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+  
+  color: rgba(179, 163, 161, 0.75);
+  text-decoration: none;
+  margin-bottom: 40px;
+}
+
+.catalog-nav-links-link:hover{
+  font-weight: bold;
+}
+
+.content {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+}
+
+@media (max-width: 1470px) {
+  .content{min-width: 1700px;}
+
+}
+
+.content-row{
+  margin-bottom: 80px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.catalog-goods {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-imgs {
+  height: 350px;
+  /* width: 500px; */
+  width: auto;
+  border-radius: 10px;
+}
+
+.img-menu {
+  justify-content: space-between;
+  display: inline-flex;
+}
+
+.img-price {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+    
+  color: #494A4A
+}
+
+.button-for-goods{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.img-add-to-cart-button {
+  height: 60px;
+}
+
+.button-like-for-goods{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 50px;
+  color: #494A4A
+}
+
+.button-like-for-goods-active {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 50px;
+  color: rgb(230, 119, 119);
+}
+
+
+
+
+
+
+

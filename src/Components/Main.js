@@ -72,7 +72,7 @@ export function Main() {
             </nav>
         </header>
 
-        <aside className='content'>
+        <aside className='content-main'>
           <section className='photos'>
             <picture className='rectangle'>
               <img id='back_img' src={BackImg} alt='img' />
