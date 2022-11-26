@@ -1,0 +1,39 @@
+.create-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.log-in-button{
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.roundable-class-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+
+}
+
+.input-in {
+  /* margin: 20px; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 14px 291px 14px 16px;
+  gap: 8px;
+
+  width: 126px;
+  height: 22px;
+
+  color: white;
+  background: #B3A3A1;
+  border-radius: 8px;
+  border-color: #B3A3A1;
+}
