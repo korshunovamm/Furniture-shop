@@ -1,0 +1,11 @@
+.service {
+  min-width: 970px;
+  justify-content: space-around;
+}
+
+#catalog-ref-from-service {
+  margin-left: 35px;
+}
+
+.service-header {
+}

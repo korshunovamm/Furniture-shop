@@ -1,12 +1,11 @@
 import '../Components_css/Cart.css';
-import bedroom1 from '../FurniturePictures/bed1.jpeg';
-import bedroom2 from '../FurniturePictures/bed2.jpeg';
-import bedroom3 from '../FurniturePictures/bed3.png';
-import bedroom4 from '../FurniturePictures/bed4.jpeg';
+import wardrobe1 from '../FurniturePictures/wardrobe1.jpeg';
+import wardrobe2 from '../FurniturePictures/wardrobe2.jpeg';
+import wardrobe3 from '../FurniturePictures/wardrobe3.jpeg';
+import wardrobe4 from '../FurniturePictures/wardrobe4.jpeg';
 import ToCartButtom from '../UI/Buttons/plus_minus_good.png';
 import Trash from '../UI/Buttons/trash.png';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 const LikeButton = () => {
   const [liked, setLiked] = useState(null);
@@ -48,45 +47,42 @@ function makeCartGood(img, price) {
   );
 }
 
-
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
-    height
+    height,
   };
 }
 
-export function Cart() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+export function Favorites() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
 
   // useEffect(() => {
   //   document.getElementById('aa').style.width = '100vw';
   //   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
   // }, [window.innerWidth]);
-  
+
   return (
     <>
-      <aside className='cart' id="aa">
+      <aside className='cart'>
         <span className='carts-offers'>
-          {makeCartGood(bedroom1, '40 000')}
-          {makeCartGood(bedroom2, '50 000')}
-          {makeCartGood(bedroom3, '45 000')}
-          {makeCartGood(bedroom4, '60 000')}
+          {makeCartGood(wardrobe1, '40 000')}
+          {makeCartGood(wardrobe2, '50 000')}
+          {makeCartGood(wardrobe3, '45 000')}
+          {makeCartGood(wardrobe4, '60 000')}
         </span>
       </aside>
     </>
   );
 }
 
+// useEffect(() => {
+//   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
 
-
-
-  // useEffect(() => {
-  //   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
-
-  //   return () => {
-  //     document.getElementById('aa').style.backgroundColor = 'transparent';
-  //   };
-  // }, []);
-
+//   return () => {
+//     document.getElementById('aa').style.backgroundColor = 'transparent';
+//   };
+// }, []);
