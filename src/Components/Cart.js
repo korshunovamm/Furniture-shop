@@ -48,26 +48,18 @@ function makeCartGood(img, price) {
   );
 }
 
-
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
-
 export function Cart() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  useEffect(() => {
+  document.getElementById('aa').style.backgroundColor = '#B3A3A1';
 
-  // useEffect(() => {
-  //   document.getElementById('aa').style.width = '100vw';
-  //   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
-  // }, [window.innerWidth]);
-  
+  return () => {
+    document.getElementById('aa').style.backgroundColor = 'transparent';
+  };
+}, []);
+
   return (
     <>
-      <aside className='cart' id="aa">
+      <aside className='cart' id='aa'>
         <span className='carts-offers'>
           {makeCartGood(bedroom1, '40 000')}
           {makeCartGood(bedroom2, '50 000')}
@@ -78,15 +70,4 @@ export function Cart() {
     </>
   );
 }
-
-
-
-
-  // useEffect(() => {
-  //   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
-
-  //   return () => {
-  //     document.getElementById('aa').style.backgroundColor = 'transparent';
-  //   };
-  // }, []);
 

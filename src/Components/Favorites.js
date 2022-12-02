@@ -5,7 +5,7 @@ import wardrobe3 from '../FurniturePictures/wardrobe3.jpeg';
 import wardrobe4 from '../FurniturePictures/wardrobe4.jpeg';
 import ToCartButtom from '../UI/Buttons/plus_minus_good.png';
 import Trash from '../UI/Buttons/trash.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const LikeButton = () => {
   const [liked, setLiked] = useState(null);
@@ -47,27 +47,18 @@ function makeCartGood(img, price) {
   );
 }
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
 export function Favorites() {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
-
-  // useEffect(() => {
-  //   document.getElementById('aa').style.width = '100vw';
-  //   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
-  // }, [window.innerWidth]);
+  useEffect(() => {
+    document.getElementById('aa').style.backgroundColor = '#B3A3A1';
+  
+    return () => {
+      document.getElementById('aa').style.backgroundColor = 'transparent';
+    };
+  }, []);
 
   return (
     <>
-      <aside className='cart'>
+      <aside className='cart' id="aa">
         <span className='carts-offers'>
           {makeCartGood(wardrobe1, '40 000')}
           {makeCartGood(wardrobe2, '50 000')}
@@ -78,11 +69,3 @@ export function Favorites() {
     </>
   );
 }
-
-// useEffect(() => {
-//   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
-
-//   return () => {
-//     document.getElementById('aa').style.backgroundColor = 'transparent';
-//   };
-// }, []);

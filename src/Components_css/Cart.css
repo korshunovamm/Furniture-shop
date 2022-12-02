@@ -6,12 +6,11 @@
   gap: 8px;
 }
 
-/* @media (max-width: 1370px) {
-  .carts-offers {
-    display: flow-root;
-  justify-content: space-evenly;
+@media (max-width: 1670px) {
+  .cart {
+   display: inline-flex;    ;
 }
-} */
+}
 
 .cart-buttons {
   display: flex;

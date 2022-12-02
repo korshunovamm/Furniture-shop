@@ -123,8 +123,9 @@
 .catalog-imgs {
   height: 350px;
   /* width: 500px; */
-  width: auto;
+  width: 350px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .img-menu {
