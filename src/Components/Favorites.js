@@ -3,49 +3,10 @@ import wardrobe1 from '../FurniturePictures/wardrobe1.jpeg';
 import wardrobe2 from '../FurniturePictures/wardrobe2.jpeg';
 import wardrobe3 from '../FurniturePictures/wardrobe3.jpeg';
 import wardrobe4 from '../FurniturePictures/wardrobe4.jpeg';
-import ToCartButtom from '../UI/Buttons/plus_minus_good.png';
-import Trash from '../UI/Buttons/trash.png';
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
+import { CartGood } from './CartGood.js'
 
-const LikeButton = () => {
-  const [liked, setLiked] = useState(null);
-  return (
-    <button
-      onClick={() => setLiked(!liked)}
-      className={
-        liked ? 'button-like-for-goods-active' : 'button-like-for-goods'
-      }
-    >
-      ♥
-    </button>
-  );
-};
 
-function makeCartGood(img, price) {
-  return (
-    <div className='cartt-goods'>
-      <img src={img} alt={'*'} className='cart-imgs' />
-      <span className='img-menu'>
-        <div className='img-price'>{price}₽</div>
-      </span>
-
-      <span className='cart-buttons'>
-        {LikeButton()}
-        <button className='button-for-goods'>
-          <img
-            src={ToCartButtom}
-            color='white'
-            alt='to cart'
-            className='img-plus-minus-button'
-          />
-        </button>
-        <button className='button-trash'>
-          <img src={Trash} alt='to cart' className='img-trash' />
-        </button>
-      </span>
-    </div>
-  );
-}
 
 export function Favorites() {
   useEffect(() => {
@@ -60,10 +21,10 @@ export function Favorites() {
     <>
       <aside className='cart' id="aa">
         <span className='carts-offers'>
-          {makeCartGood(wardrobe1, '40 000')}
-          {makeCartGood(wardrobe2, '50 000')}
-          {makeCartGood(wardrobe3, '45 000')}
-          {makeCartGood(wardrobe4, '60 000')}
+          {CartGood(wardrobe1, '40 000')}
+          {CartGood(wardrobe2, '50 000')}
+          {CartGood(wardrobe3, '45 000')}
+          {CartGood(wardrobe4, '60 000')}
         </span>
       </aside>
     </>
