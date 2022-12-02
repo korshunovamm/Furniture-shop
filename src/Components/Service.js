@@ -8,12 +8,6 @@ import ArrowRight from '../UI/Icons/CatalogPage/arrowRight.png';
 
 
 export function Service() {
-  // useEffect(() => {
-  //   return () => {
-  //     document.getElementById('aa').style.background = '#B3A3A1';
-  //   };
-  // }, []);
-
   return (
     <>
       <aside className='service'>

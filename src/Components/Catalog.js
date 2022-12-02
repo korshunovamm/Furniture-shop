@@ -1,10 +1,9 @@
-import { Link, redirect, useLocation } from 'react-router-dom';
-import { useEffect, useState, React } from 'react';
+import { Link } from 'react-router-dom';
+import { React } from 'react';
 
 import '../Components_css/Catalog.css';
 import ArrowLeft from '../UI/Icons/CatalogPage/arrowLeft.png';
 import ArrowRight from '../UI/Icons/CatalogPage/arrowRight.png';
-import addToCartButtom from '../UI/Buttons/CatalogPage/add_to_cart.png';
 
 import bedroom1 from '../FurniturePictures/bed1.jpeg';
 import bedroom2 from '../FurniturePictures/bed2.jpeg';
@@ -26,42 +25,9 @@ import wardrobe2 from '../FurniturePictures/wardrobe2.jpeg';
 import wardrobe3 from '../FurniturePictures/wardrobe3.jpeg';
 import wardrobe4 from '../FurniturePictures/wardrobe4.jpeg';
 
-
-const LikeButton = () => {
-  const [liked, setLiked] = useState(null);
-  return (
-    <button
-      onClick={() => setLiked(!liked)}
-      className={
-        liked ? 'button-like-for-goods-active' : 'button-like-for-goods'
-      }
-    >
-      ♥
-    </button>
-  );
-};
+import { CatalogGood } from './CatalogGood';
 
 export function Catalog() {
-  function makeCatalogGood(img, price) {
-    return (
-      <div className='catalog-goods'>
-        <img src={img} alt={'*'} className='catalog-imgs' />
-        <span className='img-menu'>
-          <div className='img-price'>{price}₽</div>
-          {LikeButton()}
-        </span>
-        <button className='button-for-goods'>
-          <img
-            src={addToCartButtom}
-            color='red'
-            alt='add to cart'
-            className='img-add-to-cart-button'
-          />
-        </button>
-      </div>
-    );
-  }
-
   return (
     <>
       <aside className='catalog'>
@@ -112,28 +78,28 @@ export function Catalog() {
 
         <div className='content'>
           <div className='content-row'>
-            {makeCatalogGood(bedroom1, '40 000')}
-            {makeCatalogGood(bedroom2, '50 000')}
-            {makeCatalogGood(bedroom3, '45 000')}
-            {makeCatalogGood(bedroom4, '60 000')}
+            {CatalogGood(bedroom1, '40 000')}
+            {CatalogGood(bedroom2, '50 000')}
+            {CatalogGood(bedroom3, '45 000')}
+            {CatalogGood(bedroom4, '60 000')}
           </div>
           <div className='content-row'>
-            {makeCatalogGood(kitchen1, '40 000')}
-            {makeCatalogGood(kitchen2, '50 000')}
-            {makeCatalogGood(kitchen3, '45 000')}
-            {makeCatalogGood(kitchen4, '60 000')}
+            {CatalogGood(kitchen1, '40 000')}
+            {CatalogGood(kitchen2, '50 000')}
+            {CatalogGood(kitchen3, '45 000')}
+            {CatalogGood(kitchen4, '60 000')}
           </div>{' '}
           <div className='content-row'>
-            {makeCatalogGood(living1, '40 000')}
-            {makeCatalogGood(living2, '50 000')}
-            {makeCatalogGood(living3, '45 000')}
-            {makeCatalogGood(living4, '60 000')}
+            {CatalogGood(living1, '40 000')}
+            {CatalogGood(living2, '50 000')}
+            {CatalogGood(living3, '45 000')}
+            {CatalogGood(living4, '60 000')}
           </div>{' '}
           <div className='content-row'>
-            {makeCatalogGood(wardrobe1, '40 000')}
-            {makeCatalogGood(wardrobe2, '50 000')}
-            {makeCatalogGood(wardrobe3, '45 000')}
-            {makeCatalogGood(wardrobe4, '60 000')}
+            {CatalogGood(wardrobe1, '40 000')}
+            {CatalogGood(wardrobe2, '50 000')}
+            {CatalogGood(wardrobe3, '45 000')}
+            {CatalogGood(wardrobe4, '60 000')}
           </div>
         </div>
       </aside>
