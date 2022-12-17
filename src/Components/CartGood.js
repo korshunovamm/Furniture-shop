@@ -16,7 +16,7 @@ const LikeButton = () => {
   );
 };
 
-export function CartGood(img, price) {
+export function CartGood({img, price}) {
   return (
     <div className='cartt-goods'>
       <img src={img} alt={'*'} className='cart-imgs' />
@@ -25,7 +25,7 @@ export function CartGood(img, price) {
       </span>
 
       <span className='cart-buttons'>
-        {LikeButton()}
+      <LikeButton />
         <button className='button-for-goods'>
           <img
             src={ToCartButtom}

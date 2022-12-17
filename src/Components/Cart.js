@@ -12,7 +12,10 @@ export function Cart() {
   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
 
   return () => {
-    document.getElementById('aa').style.backgroundColor = 'transparent';
+    if (document.getElementById('aa')) {
+      document.getElementById('aa').style.backgroundColor = 'transparent'
+    }
+    
   };
 }, []);
 

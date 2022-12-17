@@ -26,7 +26,7 @@ export function Service() {
               </Link>
             </div>
 
-            <div id='Catalog'> Service</div>
+            <div className='Catalog'> Service</div>
 
             <div className='main-ref'>
               <Link

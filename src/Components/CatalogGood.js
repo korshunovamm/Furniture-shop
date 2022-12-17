@@ -15,13 +15,13 @@ const LikeButton = () => {
   );
 };
 
-export function CatalogGood(img, price) {
+export function CatalogGood({img, price}) {
   return (
     <div className='catalog-goods'>
       <img src={img} alt={'*'} className='catalog-imgs' />
       <span className='img-menu'>
         <div className='img-price'>{price}₽</div>
-        {LikeButton()}
+        <LikeButton />
       </span>
       <button className='button-for-goods'>
         <img

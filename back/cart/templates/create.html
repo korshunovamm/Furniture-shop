@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{%block content%}
+<div>Создание элемента корзины</div>
+
+<form method="POST">
+  {% csrf_token %}
+  {% load crispy_forms_tags %}
+
+   {{form|crispy}}
+  <button type="submit">Создать пост</button>
+</form>
+{%endblock%}
