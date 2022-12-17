@@ -86,6 +86,31 @@ export function Catalog() {
         <div className='content'>
           
           {carts.map((cart) => <CatalogGood key={cart.id} img={cart.image} price={cart.price} /> )}
+        
+          {/* <div className='content-row'>
+            {CatalogGood(bedroom1, '40 000')}
+            {CatalogGood(bedroom2, '50 000')}
+            {CatalogGood(bedroom3, '45 000')}
+            {CatalogGood(bedroom4, '60 000')}
+          </div>
+          <div className='content-row'>
+            {CatalogGood(kitchen1, '40 000')}
+            {CatalogGood(kitchen2, '50 000')}
+            {CatalogGood(kitchen3, '45 000')}
+            {CatalogGood(kitchen4, '60 000')}
+          </div>{' '}
+          <div className='content-row'>
+            {CatalogGood(living1, '40 000')}
+            {CatalogGood(living2, '50 000')}
+            {CatalogGood(living3, '45 000')}
+            {CatalogGood(living4, '60 000')}
+          </div>{' '}
+          <div className='content-row'>
+            {CatalogGood(wardrobe1, '40 000')}
+            {CatalogGood(wardrobe2, '50 000')}
+            {CatalogGood(wardrobe3, '45 000')}
+            {CatalogGood(wardrobe4, '60 000')}
+          </div> */}
         </div>
 
       </aside>
