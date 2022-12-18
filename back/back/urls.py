@@ -18,8 +18,13 @@ from django.urls import path, include
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
+from favorites.views import FavoriteViewSet
+from cart.views import CartViewSet
 
 router = routers.DefaultRouter()
+router.register(r'favorites', FavoriteViewSet)
+router.register(r'carts', CartViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

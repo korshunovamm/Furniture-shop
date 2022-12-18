@@ -103,14 +103,14 @@
 
 @media (max-width: 1470px) {
   .content{min-width: 1700px;}
-
 }
 
 .content-row{
   margin-bottom: 80px;
+  margin-left: 40px;
 
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-around;
 }
 

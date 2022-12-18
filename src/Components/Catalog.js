@@ -5,35 +5,18 @@ import '../Components_css/Catalog.css';
 import ArrowLeft from '../UI/Icons/CatalogPage/arrowLeft.png';
 import ArrowRight from '../UI/Icons/CatalogPage/arrowRight.png';
 
-import bedroom1 from '../FurniturePictures/bed1.jpeg';
-import bedroom2 from '../FurniturePictures/bed2.jpeg';
-import bedroom3 from '../FurniturePictures/bed3.png';
-import bedroom4 from '../FurniturePictures/bed4.jpeg';
-
-import kitchen1 from '../FurniturePictures/kitchen1.png';
-import kitchen2 from '../FurniturePictures/kitchen2.jpeg';
-import kitchen3 from '../FurniturePictures/kitchen3.png';
-import kitchen4 from '../FurniturePictures/kitchen4.jpeg';
-
-import living1 from '../FurniturePictures/living1.jpeg';
-import living2 from '../FurniturePictures/living2.jpeg';
-import living3 from '../FurniturePictures/living3.jpeg';
-import living4 from '../FurniturePictures/living4.jpeg';
-
-import wardrobe1 from '../FurniturePictures/wardrobe1.jpeg';
-import wardrobe2 from '../FurniturePictures/wardrobe2.jpeg';
-import wardrobe3 from '../FurniturePictures/wardrobe3.jpeg';
-import wardrobe4 from '../FurniturePictures/wardrobe4.jpeg';
-
 import { CatalogGood } from './CatalogGood';
 
 export function Catalog() {
-  const [carts, setCarts ] = useState([]);
+  const [carts, setCarts] = useState([]);
+
   useEffect(() => {
-     fetch('http://127.0.0.1:8000/api/carts/').then((responce) => 
-     responce.json()).then((data)=>setCarts(data))
-  }, []) 
-  console.log(carts)
+    fetch('http://127.0.0.1:8000/api/carts/')
+      .then((responce) => responce.json())
+      .then((data) => setCarts(data));
+  }, []);
+
+  console.log(carts);
 
   return (
     <>
@@ -84,35 +67,12 @@ export function Catalog() {
         </div>
 
         <div className='content'>
-          
-          {carts.map((cart) => <CatalogGood key={cart.id} img={cart.image} price={cart.price} /> )}
-        
-          {/* <div className='content-row'>
-            {CatalogGood(bedroom1, '40 000')}
-            {CatalogGood(bedroom2, '50 000')}
-            {CatalogGood(bedroom3, '45 000')}
-            {CatalogGood(bedroom4, '60 000')}
+          <div className='content-row'>
+            {carts.map((cart) => (
+              <CatalogGood key={cart.id} img={cart.image} price={cart.price} />
+            ))}
           </div>
-          <div className='content-row'>
-            {CatalogGood(kitchen1, '40 000')}
-            {CatalogGood(kitchen2, '50 000')}
-            {CatalogGood(kitchen3, '45 000')}
-            {CatalogGood(kitchen4, '60 000')}
-          </div>{' '}
-          <div className='content-row'>
-            {CatalogGood(living1, '40 000')}
-            {CatalogGood(living2, '50 000')}
-            {CatalogGood(living3, '45 000')}
-            {CatalogGood(living4, '60 000')}
-          </div>{' '}
-          <div className='content-row'>
-            {CatalogGood(wardrobe1, '40 000')}
-            {CatalogGood(wardrobe2, '50 000')}
-            {CatalogGood(wardrobe3, '45 000')}
-            {CatalogGood(wardrobe4, '60 000')}
-          </div> */}
         </div>
-
       </aside>
     </>
   );

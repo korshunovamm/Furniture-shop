@@ -4,6 +4,5 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-  path('favorites/', views.index, name="index")
-] 
-# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+  path('favorites/', views.FavoriteCreate.as_view())
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

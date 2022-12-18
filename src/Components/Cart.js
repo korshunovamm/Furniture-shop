@@ -1,13 +1,19 @@
 import '../Components_css/Cart.css';
-import bedroom1 from '../FurniturePictures/bed1.jpeg';
-import bedroom2 from '../FurniturePictures/bed2.jpeg';
-import bedroom3 from '../FurniturePictures/bed3.png';
-import bedroom4 from '../FurniturePictures/bed4.jpeg';
 import { CartGood } from './CartGood.js'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export function Cart() {
+  const [carts, setCarts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/api/carts/')
+      .then((responce) => responce.json())
+      .then((data) => setCarts(data));
+  }, []);
+
+  console.log(carts);
+
   useEffect(() => {
   document.getElementById('aa').style.backgroundColor = '#B3A3A1';
 
@@ -23,10 +29,9 @@ export function Cart() {
     <>
       <aside className='cart' id='aa'>
         <span className='carts-offers'>
-          {CartGood(bedroom1, '40 000')}
-          {CartGood(bedroom2, '50 000')}
-          {CartGood(bedroom3, '45 000')}
-          {CartGood(bedroom4, '60 000')}
+        {carts.map((cart) => (
+            <CartGood key={cart.id} img={cart.image} price={cart.price} />
+          ))}
         </span>
       </aside>
     </>
