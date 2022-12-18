@@ -1,5 +1,5 @@
 import '../Components_css/Cart.css';
-import { CartGood } from './CartGood.js'
+import { CartGood } from './CartGood.js';
 import { useEffect, useState } from 'react';
 
 

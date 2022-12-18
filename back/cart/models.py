@@ -3,12 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Cart(models.Model):
-  title = models.CharField(max_length=100)
-  description = models.TextField(null=True, default="")
-  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, db_constraint=False)
   price = models.IntegerField(max_length=100)
-  date_creation = models.DateTimeField()
-  image = models.ImageField(upload_to="cartGoods", null=True)
+  image = models.ImageField(upload_to="cartGoods", null=True, blank=True)
 
-  def __str__(self) -> str:
-    return self.title + "\n" + self.description
+
