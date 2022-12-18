@@ -1,12 +1,32 @@
 import ToCartButtom from '../UI/Buttons/plus_minus_good.png';
 import Trash from '../UI/Buttons/trash.png';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
-const LikeButton = () => {
-  const [liked, setLiked] = useState(null);
+const LikeButton = ({ img, price }) => {
+  const [liked, setLiked] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+  const sendRequest = useCallback(async () => {
+    if (isSending) return;
+    setIsSending(true);
+    setLiked(!liked);
+    if (liked) {
+      fetch('http://127.0.0.1:8000/api/favorites/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ price: price, image: img }),
+      }).then(() => {
+        console.log(JSON.stringify({ price: price, image: img }));
+      });
+    }
+    setIsSending(false);
+  }, [isSending]);
+
   return (
     <button
-      onClick={() => setLiked(!liked)}
+      onClick={sendRequest}
       className={
         liked ? 'button-like-for-goods-active' : 'button-like-for-goods'
       }
@@ -16,7 +36,7 @@ const LikeButton = () => {
   );
 };
 
-export function CartGood({img, price}) {
+export function CartGood({ img, price }) {
   return (
     <div className='cartt-goods'>
       <img src={img} alt={'*'} className='cart-imgs' />
@@ -25,7 +45,7 @@ export function CartGood({img, price}) {
       </span>
 
       <span className='cart-buttons'>
-      <LikeButton />
+        <LikeButton img={img} price={price} />
         <button className='button-for-goods'>
           <img
             src={ToCartButtom}

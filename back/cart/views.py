@@ -41,11 +41,11 @@ class CartCreate(CreateView):
 class CartViewSet(viewsets.ModelViewSet):
   queryset = Cart.objects.all()
   serializer_class = CartSerializer 
-  parser_classes = (MultiPartParser, FormParser) 
+  # parser_classes = (MultiPartParser, FormParser) 
 
-  def perform_create(self, serializer):
-    serializer.validated_data['user'] = "user1"
-    return super().perform_create(serializer)
+  # def perform_create(self, serializer):
+  #   serializer.validated_data['user'] = self.request.user
+  #   return super().perform_create(serializer)
 
 
 

@@ -87,29 +87,26 @@ export function Catalog() {
           <div className='content-row'>
             <CatalogGood img={bedroom1} price={40000} />
             <CatalogGood img={bedroom2} price={50000} />
-            {/* <CatalogGood img={bedroom3} price={'45 000'} />
-            <CatalogGood img={bedroom4} price={'60 000'} />
+            <CatalogGood img={bedroom3} price={45000} />
+            <CatalogGood img={bedroom4} price={60000} />
           </div>
           <div className='content-row'>
-            <CatalogGood img={kitchen1} price={'60 000'} />
-            <CatalogGood img={kitchen2} price={'60 000'} />
-            <CatalogGood img={kitchen3} price={'60 000'} />
-            <CatalogGood img={kitchen4} price={'60 000'} />
+            <CatalogGood img={kitchen1} price={60000} />
+            <CatalogGood img={kitchen2} price={60000} />
+            <CatalogGood img={kitchen3} price={60000} />
+            <CatalogGood img={kitchen4} price={60000} />
           </div>{' '}
           <div className='content-row'>
-            <CatalogGood img={living1} price={'60 000'} />
-            <CatalogGood img={living2} price={'60 000'} />
-            <CatalogGood img={living3} price={'60 000'} />
-            <CatalogGood img={living4} price={'60 000'} />
+            <CatalogGood img={living1} price={60000} />
+            <CatalogGood img={living2} price={60000} />
+            <CatalogGood img={living3} price={60000} />
+            <CatalogGood img={living4} price={60000} />
           </div>{' '}
           <div className='content-row'>
-            <CatalogGood img={wardrobe1} price={'60 000'} />
-            <CatalogGood img={wardrobe2} price={'60 000'} />
-            <CatalogGood img={wardrobe3} price={'60 000'} />
-            <CatalogGood img={wardrobe4} price={'60 000'} /> */}
-            {/* {carts.map((cart) => (
-              <CatalogGood key={cart.id} img={cart.image} price={cart.price} />
-            ))} */}
+            <CatalogGood img={wardrobe1} price={60000} />
+            <CatalogGood img={wardrobe2} price={60000} />
+            <CatalogGood img={wardrobe3} price={60000} />
+            <CatalogGood img={wardrobe4} price={60000} />
           </div>
         </div>
       </aside>

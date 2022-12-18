@@ -1,5 +1,5 @@
 import addToCartButtom from '../UI/Buttons/CatalogPage/add_to_cart.png';
-import { useState, React, useEffect, useRef, useCallback } from 'react';
+import { useState, React, useEffect, useRef, useCallback, fileRef } from 'react';
 // import { CartGood } from './CartGood.js';
 // import { ajaxService } from '../services/ajaxService';
 
@@ -18,6 +18,23 @@ const LikeButton = () => {
 };
 
 export function CatalogGood({ img, price }) {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('price', price);
+    formData.append('image', fileRef.current.files[0]);
+
+    fetch(`http://127.0.0.1:8000/api/carts/`, {
+      headers: {
+        Authorization: `Bearer ${window.localStorage.getItem('ACCESS')}`,
+      },
+      method: 'POST',
+      body: formData,
+    });
+  };
+
+
   const [isSending, setIsSending] = useState(false);
 
   const sendRequest = useCallback(async () => {
@@ -37,7 +54,7 @@ export function CatalogGood({ img, price }) {
 
   return (
     <div className='catalog-goods'>
-      <img src={img} alt={'*'} className='catalog-imgs' />
+      <img src={img} alt={'*'} className='catalog-imgs' ref={fileRef} />
       <span className='img-menu'>
         <div className='img-price'>{price}₽</div>
         <LikeButton />

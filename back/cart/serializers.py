@@ -4,7 +4,7 @@ from user.serializers import UserSerializer
 
 class CartSerializer(serializers.ModelSerializer):
   user = UserSerializer(read_only=True)
-  image_url = serializers.ImageField()
+  # image_url = serializers.ImageField()
 
   class Meta:
     model = Cart
